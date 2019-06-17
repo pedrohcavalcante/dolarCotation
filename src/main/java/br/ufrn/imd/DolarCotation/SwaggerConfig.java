@@ -19,7 +19,7 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
 	@Bean
 	public Docket greetingApi() {
 		return new Docket(DocumentationType.SWAGGER_2).select()
-				.apis(RequestHandlerSelectors.basePackage("br.ufrn.imd.ProfessionalProfile"))
+				.apis(RequestHandlerSelectors.basePackage("br.ufrn.imd.DolarCotation"))
 				.build()
 				.apiInfo(metaData());
 	}

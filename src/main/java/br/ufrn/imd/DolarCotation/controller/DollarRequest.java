@@ -1,4 +1,4 @@
-package br.ufrn.imd.DolarCotation.controllers;
+package br.ufrn.imd.DolarCotation.controller;
 
 import java.util.Calendar;
 import java.util.Date;
