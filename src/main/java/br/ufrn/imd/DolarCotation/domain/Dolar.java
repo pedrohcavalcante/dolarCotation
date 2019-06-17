@@ -1,30 +1,39 @@
 package br.ufrn.imd.DolarCotation.domain;
 
+import java.util.Date;
+
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 public class Dolar {
 	
 	private String dollar;
-	private String cotacaoCompra;
-	private String cotacaoVenda;
+	private Double cotacaoCompra;
+	private Double cotacaoVenda;
+	private String dataHoraCotacao;
 	
 	public String getDollar() {
 		return dollar;
 	}
-	public String getCotacaoCompra() {
+	public Double getCotacaoCompra() {
 		return cotacaoCompra;
 	}
-	public String getCotacaoVenda() {
+	public Double getCotacaoVenda() {
 		return cotacaoVenda;
 	}
 	public void setDollar(String dollar) {
 		this.dollar = dollar;
 	}
-	public void setCotacaoCompra(String cotacaoCompra) {
+	public void setCotacaoCompra(Double cotacaoCompra) {
 		this.cotacaoCompra = cotacaoCompra;
 	}
-	public void setCotacaoVenda(String cotacaoVenda) {
+	public void setCotacaoVenda(Double cotacaoVenda) {
 		this.cotacaoVenda = cotacaoVenda;
+	}
+	public String getDataHoraCotacao() {
+		return dataHoraCotacao;
+	}
+	public void setDataHoraCotacao(String dataHoraCotacao) {
+		this.dataHoraCotacao = dataHoraCotacao;
 	}
 	
 	
