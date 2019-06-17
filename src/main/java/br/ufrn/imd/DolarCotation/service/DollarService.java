@@ -25,11 +25,16 @@ public class DollarService {
 	public static final String FINAL_URL = "'&$top=100&$format=json";
 	static CloseableHttpClient httpClient = HttpClients.createDefault();
 	
-	public Dolar getDolarDia(int dia, int mes, int ano) {
-		JSONObject apiJSON = requestAPI(String.valueOf(dia), String.valueOf(mes), String.valueOf(ano));
+	public Dolar getDolarDia(int dia, int mes, int ano, String moeda) {
+		JSONObject apiJSON = requestAPI(String.valueOf(dia), String.valueOf(mes+1), String.valueOf(ano));
 		Dolar dolar = new Dolar();
-		dolar.setCotacaoCompra(apiJSON.getString("cotacaoCompra"));
-		dolar.setCotacaoVenda(apiJSON.getString("cotacaoVenda"));
+		//apiJSON.getJSONObject("value").getJSONArray("0").getDouble("cotacaoCompra");
+		System.out.println(apiJSON.getJSONArray("value").getJSONObject(0).getDouble("cotacaoCompra"));
+		System.out.println(apiJSON.getJSONArray("value").getJSONObject(0).getDouble("cotacaoVenda")); 
+		dolar.setDollar(moeda);
+		dolar.setCotacaoCompra(apiJSON.getJSONArray("value").getJSONObject(0).getDouble("cotacaoCompra"));
+		dolar.setCotacaoVenda(apiJSON.getJSONArray("value").getJSONObject(0).getDouble("cotacaoVenda"));
+		dolar.setDataHoraCotacao(apiJSON.getJSONArray("value").getJSONObject(0).getString(("dataHoraCotacao")));
 		return dolar;
 	}
 	

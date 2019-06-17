@@ -1,4 +1,4 @@
-package br.ufrn.imd.DolarCotation.controllers;
+package br.ufrn.imd.DolarCotation.controller;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -24,7 +24,7 @@ public class DollarRequest {
 		Dolar dolar = new Dolar();
 		Calendar dia = Calendar.getInstance();
 		
-		return dollarService.getDolarDia(dia.get(Calendar.DAY_OF_MONTH), dia.get(Calendar.MONTH), dia.get(Calendar.YEAR));
+		return dollarService.getDolarDia(dia.get(Calendar.DAY_OF_MONTH), dia.get(Calendar.MONTH), dia.get(Calendar.YEAR), moeda);
 	}
 	
 	@GetMapping("{dia}/{mes}/{ano}")
