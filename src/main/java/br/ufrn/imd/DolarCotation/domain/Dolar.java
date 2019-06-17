@@ -6,13 +6,13 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 public class Dolar {
 	
-	private String dollar;
+	private String moeda;
 	private Double cotacaoCompra;
 	private Double cotacaoVenda;
 	private String dataHoraCotacao;
 	
-	public String getDollar() {
-		return dollar;
+	public String getMoeda() {
+		return moeda;
 	}
 	public Double getCotacaoCompra() {
 		return cotacaoCompra;
@@ -20,8 +20,8 @@ public class Dolar {
 	public Double getCotacaoVenda() {
 		return cotacaoVenda;
 	}
-	public void setDollar(String dollar) {
-		this.dollar = dollar;
+	public void setMoeda(String dollar) {
+		this.moeda = dollar;
 	}
 	public void setCotacaoCompra(Double cotacaoCompra) {
 		this.cotacaoCompra = cotacaoCompra;
