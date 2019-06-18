@@ -4,6 +4,11 @@ import java.util.Date;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
+/**
+ * Classe de domínio referente a moeda utilizada pelas consultas
+ * @author pedrohbcavalcante
+ *
+ */
 public class Dolar {
 	
 	private String moeda;
