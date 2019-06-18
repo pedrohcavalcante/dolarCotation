@@ -3,6 +3,7 @@ package br.ufrn.imd.DolarCotation.controller;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.TimeZone;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,7 +29,8 @@ public class DollarRequest {
 	@GetMapping("/dolar")
 	public Dolar getCotacaoDolar() {
 		Dolar dolar = new Dolar();
-		Calendar dia = Calendar.getInstance();
+		Calendar dia = Calendar.getInstance(TimeZone.getTimeZone("America/Sao_Paulo"));
+		
 		
 		return dollarService.getDolarDia(dia.get(Calendar.DAY_OF_MONTH), dia.get(Calendar.MONTH), dia.get(Calendar.YEAR), "USD");
 	}
