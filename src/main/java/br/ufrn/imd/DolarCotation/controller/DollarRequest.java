@@ -34,7 +34,9 @@ public class DollarRequest {
 	}
 	
 	@GetMapping("{dia}/{mes}/{ano}")
-	public Dolar getCotacaoDia(@PathVariable String dia, @PathVariable String mes, @PathVariable String ano) {
-		return null;
+	public Dolar getCotacaoDia(@PathVariable int dia, @PathVariable int mes, @PathVariable int ano) {
+		return dollarService.getDolarDiaV2(dia, mes, ano, "USD");
 	}
+	
+	
 }
