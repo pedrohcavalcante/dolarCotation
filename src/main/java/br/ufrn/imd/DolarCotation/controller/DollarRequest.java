@@ -13,6 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
 import br.ufrn.imd.DolarCotation.domain.Dolar;
 import br.ufrn.imd.DolarCotation.service.DollarService;
 
+/**
+ * Mapeamento dos endpoints da aplicação
+ * @author pedrohbcavalcante
+ *
+ */
 @RestController
 @RequestMapping("/cotacao")
 public class DollarRequest {
