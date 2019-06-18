@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.TimeZone;
 
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -68,7 +69,7 @@ public class DollarService {
 	}
 
 	public JSONObject getByMoedaCode(String moeda) {
-		Calendar dia = Calendar.getInstance();
+		Calendar dia = Calendar.getInstance(TimeZone.getTimeZone("America/Sao_Paulo"));
 		HttpGet get = new HttpGet(BASE_URL + "CotacaoMoedaDia(moeda=@moeda,dataCotacao=@dataCotacao)?@moeda='" + moeda
 				+ "'&@dataCotacao='" + dia.get(Calendar.MONTH) + "-" + dia.get(Calendar.DAY_OF_MONTH) + "-"
 				+ dia.get(Calendar.YEAR) + FINAL_URL);
